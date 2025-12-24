@@ -21,44 +21,34 @@ function ContactForm({ contactAction }) {
     toast.error("Invalid contact data");
   }
   return (
-    <form ref={formRef} action={formAction} className={styles.contactForm}>
-      {state.errors?.critical && (
-        <Alert type="danger">{state.errors?.critical}</Alert>
-      )}
+    <form ref={formRef} action={formAction} className={styles.contactForm} style={{ direction: "rtl" }}>
+      {state.errors?.critical && <Alert type="danger">{state.errors?.critical}</Alert>}
 
       <div>
-        <input name="fullname" type="text" placeholder="Name" />
-        {state.errors?.fullname && (
-          <span className={styles.errorMessage}>{state.errors.fullname}</span>
-        )}
-      </div>
-      <div>
-        <input name="email" type="email" placeholder="Email" />
-        {state.errors?.email && (
-          <span className={styles.errorMessage}>{state.errors.email}</span>
-        )}
-      </div>
-      <div>
-        <input name="phone" type="tel" placeholder="Phone" />
-        {state.errors?.phone && (
-          <span className={styles.errorMessage}>{state.errors.phone}</span>
-        )}
-      </div>
-      <div>
-        <textarea name="message" placeholder="Message" rows={5}></textarea>
-        {state.errors?.message && (
-          <span className={styles.errorMessage}>{state.errors.message}</span>
-        )}
+        <input name="fullname" type="text" placeholder="نام و نام خانوادگی" style={{ textAlign: "right" }} />
+        {state.errors?.fullname && <span className={styles.errorMessage}>{state.errors.fullname}</span>}
       </div>
 
       <div>
-        <SubmitButton type="submit">Send</SubmitButton>
-        <button
-          type="reset"
-          className={styles.resetButton}
-          ref={resetBtnRef}
-        ></button>
+        <input name="email" type="email" placeholder="ایمیل" style={{ textAlign: "right" }} />
+        {state.errors?.email && <span className={styles.errorMessage}>{state.errors.email}</span>}
       </div>
+
+      <div>
+        <input name="phone" type="tel" placeholder="تلفن" style={{ textAlign: "right" }} />
+        {state.errors?.phone && <span className={styles.errorMessage}>{state.errors.phone}</span>}
+      </div>
+
+      <div>
+        <textarea name="message" placeholder="پیام شما" rows={5} style={{ textAlign: "right" }}></textarea>
+        {state.errors?.message && <span className={styles.errorMessage}>{state.errors.message}</span>}
+      </div>
+
+      <div>
+        <SubmitButton type="submit">ارسال</SubmitButton>
+        <button type="reset" className={styles.resetButton} ref={resetBtnRef}></button>
+      </div>
+
       <Toaster position="top-center" />
     </form>
   );

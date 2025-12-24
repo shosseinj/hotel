@@ -11,51 +11,38 @@ function Navbar({ user, signOutAction }) {
   const [hideMenu, setHideMenu] = useState(true);
   const pathname = usePathname();
   return (
-    <header>
-      <div className="container header-items">
-        <h2>LOGO</h2>
+    <header style={{ direction: "rtl" }}>
+      <div className="container header-items" style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+        <h2>لوگو</h2>
         <nav className={`navbar ${hideMenu ? "hide-menu" : "show-menu"}`}>
-          <ul>
+          <ul style={{ display: "flex", gap: "60px", listStyle: "none", padding: 0, margin: 0 }}>
             <li>
               <Link className={pathname === "/" ? "active" : ""} href="/" onClick={() => setHideMenu(true)}>
-                Home
+                صفحه اصلی
               </Link>
             </li>
             <li>
-              <Link
-                className={pathname.includes("rooms") ? "active" : ""}
-                href="/rooms"
-                onClick={() => setHideMenu(true)}
-              >
-                Rooms
+              <Link className={pathname.includes("rooms") ? "active" : ""} href="/rooms" onClick={() => setHideMenu(true)}>
+                اقامتگاه ها
               </Link>
             </li>
-            {/* <li>About</li> */}
             <li>
-              <Link
-                href={"/contact"}
-                className={pathname === "/contact" ? "active" : ""}
-                onClick={() => setHideMenu(true)}
-              >
-                Contact Us
+              <Link href={"/contact"} className={pathname === "/contact" ? "active" : ""} onClick={() => setHideMenu(true)}>
+                تماس با ما
               </Link>
             </li>
             <li>
               {user ? (
                 <GuestDropdown user={user} signOutAction={signOutAction} />
               ) : (
-                <Link
-                  className={pathname.includes("account") || pathname === "/signin" ? "active" : ""}
-                  href="/signin"
-                  onClick={() => setHideMenu(true)}
-                >
-                  Guest Area
+                <Link className={pathname.includes("account") || pathname === "/signin" ? "active" : ""} href="/signin" onClick={() => setHideMenu(true)}>
+                  مهمان
                 </Link>
               )}
             </li>
           </ul>
         </nav>
-        <button onClick={() => setHideMenu(!hideMenu)} className="toggle-menu-button">
+        <button onClick={() => setHideMenu(!hideMenu)} className="toggle-menu-button" style={{ marginLeft: "0" }}>
           <FontAwesomeIcon icon={hideMenu ? faBars : faClose} />
         </button>
       </div>

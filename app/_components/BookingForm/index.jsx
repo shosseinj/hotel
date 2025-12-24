@@ -37,10 +37,10 @@ function BookingForm({ bookingSearchAction, children }) {
 
   return (
     <form action={handleSearch} className={styles.bookingForm}>
-      <h1 className={styles.formHeading}>BOOK A ROOM ONLINE</h1>
+      <h1 className={styles.formHeading}>رزرو اقامتگاه</h1>
       <div className={styles.formControl}>
         <label htmlFor="" className={styles.formLabel}>
-          Arrival
+          زمان ورود
         </label>
         <DatePicker
           selected={startDate}
@@ -55,7 +55,7 @@ function BookingForm({ bookingSearchAction, children }) {
       </div>
       <div className={styles.formControl}>
         <label htmlFor="" className={styles.formLabel}>
-          Departure
+          زمان خروج
         </label>
         <DatePicker
           selected={endDate}

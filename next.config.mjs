@@ -1,3 +1,22 @@
+// /** @type {import('next').NextConfig} */
+// const nextConfig = {
+//   eslint: {
+//     ignoreDuringBuilds: true,
+//   },
+
+//   images: {
+//     remotePatterns: [
+//       {
+//         protocol: "https",
+//         hostname: "kapumuyablpuibhumzdj.supabase.co",
+//         port: "",
+//         pathname: "/storage/v1/object/public/rooms-imgs/**",
+//       },
+//     ],
+//   },
+// };
+
+// export default nextConfig;
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   eslint: {
@@ -12,28 +31,21 @@ const nextConfig = {
         port: "",
         pathname: "/storage/v1/object/public/rooms-imgs/**",
       },
-    ],
-  },
-
-  async headers() {
-    return [
+      // Specific path for your media files
       {
-        source: "/api/guests",
-        headers: [
-          { key: "Access-Control-Allow-Credentials", value: "true" },
-          {
-            key: "Access-Control-Allow-Origin",
-            value: process.env.NEXT_PUBLIC_BACK_OFFICE_URL,
-          },
-          { key: "Access-Control-Allow-Methods", value: "GET" },
-          {
-            key: "Access-Control-Allow-Headers",
-            value:
-              "Authorization, X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version",
-          },
-        ],
+        protocol: "http",
+        hostname: "127.0.0.1",
+        port: "7000",
+        pathname: "/media/**", // Only allows /media/... paths
       },
-    ];
+      // Allow all localhost URLs for development flexibility
+      {
+        protocol: "http",
+        hostname: "localhost",
+        port: "**", // Allows any port
+        pathname: "/**",
+      },
+    ],
   },
 };
 

@@ -2,20 +2,10 @@
 import { useFormStatus } from "react-dom";
 import styles from "./styles.module.css";
 
-function SubmitButton({
-  onClick = null,
-  type = "button",
-  className = "",
-  content = { pending: "Loading...", base: "Submit" },
-}) {
+function SubmitButton({ onClick = null, type = "button", className = "", content = { pending: "در حال ارسال...", base: "ارسال" } }) {
   const { pending } = useFormStatus();
   return (
-    <button
-      type={type}
-      onClick={onClick ? () => onClick() : null}
-      disabled={pending}
-      className={`${styles.sendBtn} ${className}`}
-    >
+    <button type={type} onClick={onClick ? () => onClick() : null} disabled={pending} className={`${styles.sendBtn} ${className}`}>
       {pending ? content.pending : content.base}
     </button>
   );

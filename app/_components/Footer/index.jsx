@@ -3,44 +3,41 @@ import styles from "./styles.module.css";
 
 function Footer() {
   return (
-    <footer className={styles.footer}>
+    <footer className={styles.footer} style={{ direction: "rtl" }}>
       <nav className={`${styles.footerMenu} container`}>
         <div>
-          <h3>Contact Us</h3>
+          <h3>تماس با ما</h3>
           <ul>
             <li>email@gmail.com</li>
-            <li>+212 6 77 88 99 00</li>
-            <li>XYZ Street Agadir</li>
+            <li>+۹۸ ۹۱۲ ۳۴۵ ۶۷۸۹</li>
+            <li>خیابان ایکس، تهران</li>
             <li className={styles.icons}></li>
           </ul>
         </div>
 
         <div>
-          <h3>Link Menu</h3>
+          <h3>منوی لینک‌ها</h3>
           <ul>
             <li>
-              <Link href="/">Homepage</Link>
+              <Link href="/">صفحه اصلی</Link>
             </li>
             <li>
-              <Link href="/rooms">Rooms</Link>
+              <Link href="/rooms">اتاق‌ها</Link>
             </li>
-
-            {/* <li>Blog</li> */}
             <li>
-              <Link href={"/contact"}>Contact Us</Link>
+              <Link href="/contact">تماس با ما</Link>
             </li>
-
             <li>
-              <Link href="/signin">Guest Area</Link>
+              <Link href="/signin">منطقه مهمان</Link>
             </li>
           </ul>
         </div>
 
         <div>
-          <h3>Subscribe To Our Newsletter</h3>
+          <h3>عضویت در خبرنامه</h3>
           <li className={styles.newsletter}>
             <input type="text" placeholder="example@mail.com" />
-            <button>SUBMIT</button>
+            <button>ارسال</button>
           </li>
         </div>
       </nav>

@@ -14,8 +14,8 @@ function HeroSection({ bookingSearchAction }) {
           <BookingForm bookingSearchAction={bookingSearchAction} />
         </div>
         <div className={styles.heroTitle}>
-          <p>Find Comfort In a Foriegn Land With Us</p>
-          <p>Book Now, Pay On Arrival</p>
+          <h2>به سرویس رزرو اقامتگاه خوش آمدید</h2>
+          <p> تجربه متفاوتی را با ما شروع کنید</p>
           <div className={styles.heroCTA}>
             <Modal>
               <Modal.ToggleOpen>
@@ -27,7 +27,7 @@ function HeroSection({ bookingSearchAction }) {
                     <div>
                       <Modal.ToggleClose>
                         <button type="button" className={styles.closeButton}>
-                          Cancel
+                          لغو
                         </button>
                       </Modal.ToggleClose>
                     </div>

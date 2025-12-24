@@ -8,9 +8,7 @@ function ContactSection() {
   return (
     <section className={styles.contactSection}>
       <div className="container">
-        <Heading className={`text-center ${styles.heading}`}>
-          Contact Us
-        </Heading>
+        <Heading className={`text-center ${styles.heading}`}>تماس با ما </Heading>
         <div className={`${styles.contactContainer}`}>
           <ContactForm contactAction={contactAction} />
           <ContactMap />

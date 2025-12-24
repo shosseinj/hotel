@@ -10,12 +10,15 @@
   },
   "dependencies": {
     "@auth/supabase-adapter": "^1.7.0",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
     "@fortawesome/fontawesome-svg-core": "^6.6.0",
     "@fortawesome/free-brands-svg-icons": "^6.6.0",
     "@fortawesome/free-regular-svg-icons": "^6.6.0",
     "@fortawesome/free-solid-svg-icons": "^6.6.0",
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@mapbox/node-pre-gyp": "^1.0.11",
+    "@mui/material": "^7.3.6",
     "@stripe/react-stripe-js": "^3.1.1",
     "@stripe/stripe-js": "^5.4.0",
     "@supabase/supabase-js": "^2.45.4",
@@ -33,6 +36,7 @@
     "react-dom": "^18",
     "react-hot-toast": "^2.4.1",
     "react-leaflet": "^4.2.1",
+    "react-multi-date-picker": "^4.5.2",
     "react-select": "^5.8.0",
     "stripe": "^17.5.0",
     "zod": "^3.23.8"

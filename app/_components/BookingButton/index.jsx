@@ -7,7 +7,7 @@ function BookingButton({ onClick = null }) {
 
   return (
     <button type="submit" disabled={pending} onClick={onClick ?? onClick} className={styles.bookingBtn}>
-      {pending ? "Processing..." : "Book Now"}
+      {pending ? "در حال پردازش..." : "رزرو "}
     </button>
   );
 }
